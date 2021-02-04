@@ -1,3 +1,154 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%;
+}
+
+#Wrapper {
+  width: 100%;
+  height: 100vh;
+  background-color: #6d3a6d;
+  padding: 1% 1% 2% 1%;
+}
+
+#header {
+  width: 80%;
+  height: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto;
+}
+
+#convert {
+  width: 100%;
+  height: 70%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (10%)[10];
+  -ms-grid-columns: (5%)[20];
+      grid-template: repeat(10, 10%)/repeat(20, 5%);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#convert #currency1-amount {
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 5;
+  -ms-grid-column: 10;
+  -ms-grid-column-span: 5;
+  grid-area: 5 / 10 / span 5 / span 5;
+  height: 100%;
+  font-size: 1.5rem;
+}
+
+#convert #currency1 {
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 5;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 3;
+  grid-area: 5 / 3 / span 5 / span 3;
+  height: 100%;
+  font-size: 1.3rem;
+}
+
+#convert #swap {
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 5;
+  -ms-grid-column: 6;
+  -ms-grid-column-span: 1;
+  grid-area: 5 / 6 / span 5 / span 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
+  height: 80%;
+  background-color: white;
+  font-size: 1.5rem;
+  margin: auto;
+}
+
+#convert #currency2 {
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 5;
+  -ms-grid-column: 7;
+  -ms-grid-column-span: 3;
+  grid-area: 5 / 7 / span 5 / span 3;
+  height: 100%;
+  font-size: 1.3rem;
+}
+
+#convert #form-submit {
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 5;
+  -ms-grid-column: 15;
+  -ms-grid-column-span: 4;
+  grid-area: 5 / 15 /span 5 / span 4;
+  width: 100%;
+  height: 100%;
+  font-size: 1.5rem;
+}
+
+#main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
+  height: 80%;
+  border: solid black 1px;
+  margin: auto;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.button {
+  width: 50%;
+  height: 50%;
+  border: solid black 1px;
+  border-radius: 10px;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+.button:hover {
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+  -webkit-box-shadow: 0 0 10px black;
+          box-shadow: 0 0 10px black;
+}
+
+.button:active {
+  color: white;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
 @media only screen and (min-width: 320px) and (max-width: 600px) {
   html {
     font-size: 80%;

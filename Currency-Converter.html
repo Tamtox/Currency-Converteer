@@ -4,11 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <link rel="stylesheet" href="./Styles/Currency-Converter.css">
     <title>Currency Converter</title>
 </head>
 <body>
-    
+    <div id="Wrapper">
+        <div id="header">
+            <form action="" id="convert">
+                <input type="text" id="currency1-amount" placeholder="Amount">
+                <label for="currency1">123</label>
+                <select name="currency1" id="currency1" required>
+                    <option value="">From</option>
+                </select>
+                <div class="button" id="swap"><i class="fas fa-exchange-alt"></i></div>
+                <label for="currency2">123</label>
+                <select name="currency2" id="currency2">
+                    <option value="">To</option>
+                </select>
+                <input class="button" type="submit" value="Convert" id="form-submit">
+            </form>
+        </div>
+        <div id="main">
+            <p>123</p>
+        </div>
+    </div>
     <script type="module" src="/Scripts/Currency-Converter.js"></script>
 </body>
 </html>

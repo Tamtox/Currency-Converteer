@@ -1,7 +1,78 @@
 @import 'mixins';
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 100%;
+}
+#Wrapper{
+    @include widthAndHeight(100%,100vh);
+    background-color: rgb(109, 58, 109);
+    padding: 1% 1% 2% 1%;
+}
+#header{
+    @include widthAndHeight(80%,20%);
+    @include flex(center,center);
+    margin: auto;
+}
+#convert{
+    @include widthAndHeight(100%,70%);
+    @include grid(repeat(20,5%),repeat(10,10%));
+    align-items: center;
+    #currency1-amount{
+        grid-area: 5 / 10 / span 5 / span 5 ;
+        height: 100%;
+        font-size: 1.5rem;
+    }
+    #currency1{
+        grid-area: 5 / 3 / span 5 / span 3 ;
+        height: 100%;
+        font-size: 1.3rem;
+    }
+    #swap{
+        grid-area: 5 / 6 / span 5 / span 1 ;
+        @include flex(center,center);
+        @include widthAndHeight(80%,80%);
+        background-color: white;
+        font-size: 1.5rem;
+        margin: auto;
+    }
+    #currency2{
+        grid-area: 5 / 7 / span 5 / span 3 ;
+        height: 100%;
+        font-size: 1.3rem;
+    }
+    #form-submit{   
+        grid-area: 5 / 15 /span 5 / span 4;
+        @include widthAndHeight(100%,100%);
+        font-size: 1.5rem;
+    }
+}
+#main{
+    @include flex(center,center);
+    @include widthAndHeight(80%,80%);
+    border: solid black 1px;
+    margin: auto;
+    background-color: white;
+    border-radius: 10px;
+}
 
-
-
+.button{
+    @include widthAndHeight(50%,50%);
+    border: solid black 1px;
+    border-radius: 10px;
+    transition: transform 0.5s;
+}
+.button:hover{
+    transform: scale(1.03);
+    box-shadow: 0 0 10px black ;
+}
+.button:active{
+    color: white;
+    transform: scale(0.9);
+}
 
 
 @import 'media-queries';
