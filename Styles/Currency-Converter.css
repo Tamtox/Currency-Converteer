@@ -3,10 +3,20 @@
           box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Montserrat', sans-serif;
 }
 
 html {
   font-size: 100%;
+}
+
+#container {
+  width: 80%;
+  height: 100%;
+  -webkit-box-shadow: 0 0 20px black;
+          box-shadow: 0 0 20px black;
+  margin: auto;
+  border-radius: 10px;
 }
 
 #Wrapper {
@@ -17,7 +27,7 @@ html {
 }
 
 #header {
-  width: 80%;
+  width: 100%;
   height: 20%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -29,6 +39,8 @@ html {
       -ms-flex-align: center;
           align-items: center;
   margin: auto;
+  background-color: blueviolet;
+  border-radius: 10px 10px 0 0;
 }
 
 #convert {
@@ -44,32 +56,34 @@ html {
           align-items: center;
 }
 
-#convert #currency1-amount {
-  -ms-grid-row: 5;
+#convert #currencyamount {
+  -ms-grid-row: 3;
   -ms-grid-row-span: 5;
   -ms-grid-column: 10;
   -ms-grid-column-span: 5;
-  grid-area: 5 / 10 / span 5 / span 5;
+  grid-area: 3 / 10 / span 5 / span 5;
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
   height: 100%;
   font-size: 1.5rem;
 }
 
 #convert #currency1 {
-  -ms-grid-row: 5;
-  -ms-grid-row-span: 5;
-  -ms-grid-column: 3;
-  -ms-grid-column-span: 3;
-  grid-area: 5 / 3 / span 5 / span 3;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 4;
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 6;
+  grid-area: 1 / 4 / span 4 / span 6;
   height: 100%;
   font-size: 1.3rem;
 }
 
 #convert #swap {
-  -ms-grid-row: 5;
+  -ms-grid-row: 3;
   -ms-grid-row-span: 5;
-  -ms-grid-column: 6;
+  -ms-grid-column: 3;
   -ms-grid-column-span: 1;
-  grid-area: 5 / 6 / span 5 / span 1;
+  grid-area: 3 / 3 / span 5 / span 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -80,34 +94,48 @@ html {
       -ms-flex-align: center;
           align-items: center;
   width: 80%;
-  height: 80%;
+  height: 100%;
   background-color: white;
   font-size: 1.5rem;
   margin: auto;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
 
 #convert #currency2 {
-  -ms-grid-row: 5;
-  -ms-grid-row-span: 5;
-  -ms-grid-column: 7;
-  -ms-grid-column-span: 3;
-  grid-area: 5 / 7 / span 5 / span 3;
+  -ms-grid-row: 6;
+  -ms-grid-row-span: 4;
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 6;
+  grid-area: 6 / 4 / span 4 / span 6;
   height: 100%;
   font-size: 1.3rem;
 }
 
 #convert #form-submit {
-  -ms-grid-row: 5;
+  -ms-grid-row: 3;
   -ms-grid-row-span: 5;
   -ms-grid-column: 15;
   -ms-grid-column-span: 4;
-  grid-area: 5 / 15 /span 5 / span 4;
+  grid-area: 3 / 15 /span 5 / span 4;
+  -webkit-transform: translateX(15px);
+          transform: translateX(15px);
   width: 100%;
   height: 100%;
   font-size: 1.5rem;
 }
 
 #main {
+  width: 100%;
+  height: 80%;
+  margin: auto;
+  background-color: white;
+  border-radius: 0 0 10px 10px;
+}
+
+#conversion {
+  width: 95%;
+  height: 15%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -117,12 +145,59 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 80%;
-  height: 80%;
-  border: solid black 1px;
+  font-size: 2rem;
   margin: auto;
-  background-color: white;
-  border-radius: 10px;
+  border-bottom: 1px solid black;
+}
+
+#chart {
+  height: 85%;
+  border-radius: 0 0 10px 10px;
+}
+
+#chart #selectedCurrency {
+  width: 85%;
+  height: 15%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto;
+  font-size: 1.5rem;
+}
+
+#chart #entries {
+  width: 85%;
+  height: 85%;
+  margin: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (20%)[5];
+      grid-template-columns: repeat(5, 20%);
+  grid-auto-rows: 15%;
+  overflow: scroll;
+  scrollbar-width: none;
+}
+
+.chartItem {
+  width: 90%;
+  height: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto;
+  border: solid 1px black;
 }
 
 .button {
@@ -130,23 +205,19 @@ html {
   height: 50%;
   border: solid black 1px;
   border-radius: 10px;
-  -webkit-transition: -webkit-transform 0.5s;
-  transition: -webkit-transform 0.5s;
-  transition: transform 0.5s;
-  transition: transform 0.5s, -webkit-transform 0.5s;
+  -webkit-transition: -webkit-box-shadow 0.5s;
+  transition: -webkit-box-shadow 0.5s;
+  transition: box-shadow 0.5s;
+  transition: box-shadow 0.5s, -webkit-box-shadow 0.5s;
 }
 
 .button:hover {
-  -webkit-transform: scale(1.03);
-          transform: scale(1.03);
   -webkit-box-shadow: 0 0 10px black;
           box-shadow: 0 0 10px black;
 }
 
 .button:active {
-  color: white;
-  -webkit-transform: scale(0.9);
-          transform: scale(0.9);
+  color: #a7a6a6;
 }
 
 @media only screen and (min-width: 320px) and (max-width: 600px) {

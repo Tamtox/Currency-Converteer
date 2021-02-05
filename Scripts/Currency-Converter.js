@@ -1,34 +1,77 @@
 import codes from './Currency-Codes.js';
 
 // Variables
-const header = document.querySelector('#header');
-const main = document.querySelector('main');
 const convert = document.querySelector('#convert');
 const currency1 = document.querySelector('#currency1');
 const currency2 = document.querySelector('#currency2');
-const currency1Amount = document.querySelector('#currency1-amount');
 const swap = document.querySelector('#swap');
-
+const conversion = document.querySelector('#conversion');
+const selectedCurrency = document.querySelector('#selectedCurrency');
+const entries = document.querySelector('#entries')
 // Events
 swap.addEventListener('click',function() {
     [currency1.selectedIndex,currency2.selectedIndex] = [currency2.selectedIndex,currency1.selectedIndex]
 })
 convert.addEventListener('submit',function(e) {
-    e.preventDefault()
+    let currencyAmount = convert.elements.currencyamount;
+    functions.clear()
+    e.preventDefault();
+    conversion.innerText = currencyAmount.value
+    functions.getInfo(currency1.value)
+    .then(res=>{
+        console.log(res.data)
+        functions.setConversion(res,currencyAmount.value,currency2.value);
+        functions.setChart(res,currency1.value);
+        currencyAmount.value = ""
+    })
 })
 
 // Functions
 const functions = {
+    // Generate Country names to select menus
     generateCodes(parent) {
         const currencyCodes = Object.keys(codes);
         for(let i=0;i<currencyCodes.length;i++) {
             let currency = document.createElement('option');
             currency.setAttribute('value',currencyCodes[i])
-            currency.innerText = currencyCodes[i];
+            currency.innerText = codes[currencyCodes[i]];
             parent.appendChild(currency);
         }       
+    },
+    // Exchange rate api call
+    async getInfo(curr) {
+        return  await axios.get(`https://v6.exchangerate-api.com/v6/fa2fd75ad8cb2e47792d8a78/latest/${curr}`)
+    },
+    // Set Conversion calculation
+    setConversion(res,currencyAm,secondCurr) {
+        if(currencyAm === "") {
+            currencyAm = 1
+        }
+        console.log(currencyAm)
+        if(secondCurr === "") {
+            conversion.innerText = `${currencyAm} ${codes[res.data.base_code]}`;
+        }
+        else{
+            conversion.innerText = `${currencyAm} ${codes[res.data.base_code]} = ${(parseFloat(currencyAm)*res.data.conversion_rates[secondCurr]).toFixed(3)} ${codes[secondCurr]}`
+        }
+    },
+    // Set Exchange rates to chosen currency
+    setChart(res,firstCurr) {
+        selectedCurrency.innerText = `${firstCurr} Exchange Rates`
+        const currencyCodes = Object.keys(codes);
+        for(let i of currencyCodes) {
+            let chartItem = document.createElement('div');
+            chartItem.classList.add('chartItem');
+            entries.appendChild(chartItem)
+        }
+    },
+    // Clear all inputs
+    clear() {
+        conversion.innerHTML = "";
+        selectedCurrency.innerHTML = "";
+        entries.innerHTML = "";
     }
 }
 // Generate Codes
-functions.generateCodes(currency1);
-functions.generateCodes(currency2);
+functions.generateCodes(currency1)
+functions.generateCodes(currency2)
