@@ -10,6 +10,13 @@ html {
   font-size: 100%;
 }
 
+#Wrapper {
+  width: 100%;
+  height: 100vh;
+  background-color: #6d3a6d;
+  padding: 1% 1% 2% 1%;
+}
+
 #container {
   width: 80%;
   height: 100%;
@@ -17,13 +24,6 @@ html {
           box-shadow: 0 0 20px black;
   margin: auto;
   border-radius: 10px;
-}
-
-#Wrapper {
-  width: 100%;
-  height: 100vh;
-  background-color: #6d3a6d;
-  padding: 1% 1% 2% 1%;
 }
 
 #header {
@@ -79,11 +79,11 @@ html {
 }
 
 #convert #swap {
-  -ms-grid-row: 3;
-  -ms-grid-row-span: 5;
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 4;
   -ms-grid-column: 3;
   -ms-grid-column-span: 1;
-  grid-area: 3 / 3 / span 5 / span 1;
+  grid-area: 4 / 3 / span 4 / span 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -231,11 +231,135 @@ html {
   html {
     font-size: 80%;
   }
+  #container {
+    width: 95%;
+  }
+  #header {
+    width: 100%;
+    height: 30%;
+  }
+  #convert {
+    width: 100%;
+    height: 90%;
+  }
+  #convert #currencyamount {
+    -ms-grid-row: 6;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 15;
+    grid-area: 6 / 3 / span 2 / span 15;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  #convert #currency1 {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 15;
+    grid-area: 2 / 3 / span 2 / span 15;
+  }
+  #convert #swap {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 18;
+    -ms-grid-column-span: 4;
+    grid-area: 3 / 18 / span 2 / span 4;
+  }
+  #convert #currency2 {
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 15;
+    grid-area: 4 / 3 / span 2 / span 15;
+  }
+  #convert #form-submit {
+    -ms-grid-row: 8;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 15;
+    grid-area: 8 / 3 / span 2 / span 15;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  #main {
+    width: 100%;
+    height: 70%;
+  }
+  #conversion {
+    width: 95%;
+    height: 12%;
+    font-size: 1.1rem;
+  }
+  #chart {
+    height: 88%;
+  }
+  #chart #selectedCurrency {
+    font-size: 1.5rem;
+  }
+  #chart #entries {
+    -ms-grid-columns: (50%)[2];
+        grid-template-columns: repeat(2, 50%);
+    grid-auto-rows: 10%;
+  }
 }
 
 @media only screen and (min-width: 600px) and (max-width: 768px) {
   html {
     font-size: 80%;
+  }
+  #convert #currencyamount {
+    -ms-grid-row: 8;
+    -ms-grid-row-span: 5;
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 9;
+    grid-area: 8 / 4 / span 5 / span 9;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  #convert #currency1 {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 3;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 9;
+    grid-area: 2 / 2 / span 3 / span 9;
+  }
+  #convert #swap {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+    -ms-grid-row: 6;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 9;
+    -ms-grid-column-span: 4;
+    grid-area: 6 / 9 / span 2 / span 4;
+  }
+  #convert #currency2 {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 3;
+    -ms-grid-column: 11;
+    -ms-grid-column-span: 9;
+    grid-area: 2 / 11 / span 3 / span 9;
+  }
+  #convert #form-submit {
+    -ms-grid-row: 8;
+    -ms-grid-row-span: 5;
+    -ms-grid-column: 13;
+    -ms-grid-column-span: 5;
+    grid-area: 8 / 13 /span 5 / span 5;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  #conversion {
+    font-size: 1.3rem;
+  }
+  #chart #selectedCurrency {
+    font-size: 1.5rem;
+  }
+  #chart #entries {
+    -ms-grid-columns: (33.333%)[3];
+        grid-template-columns: repeat(3, 33.333%);
+    grid-auto-rows: 15%;
   }
 }
 
@@ -243,11 +367,97 @@ html {
   html {
     font-size: 85%;
   }
+  #convert #currencyamount {
+    -ms-grid-row: 8;
+    -ms-grid-row-span: 5;
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 9;
+    grid-area: 8 / 4 / span 5 / span 9;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  #convert #currency1 {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 3;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 9;
+    grid-area: 2 / 2 / span 3 / span 9;
+  }
+  #convert #swap {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+    -ms-grid-row: 6;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 9;
+    -ms-grid-column-span: 4;
+    grid-area: 6 / 9 / span 2 / span 4;
+  }
+  #convert #currency2 {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 3;
+    -ms-grid-column: 11;
+    -ms-grid-column-span: 9;
+    grid-area: 2 / 11 / span 3 / span 9;
+  }
+  #convert #form-submit {
+    -ms-grid-row: 8;
+    -ms-grid-row-span: 5;
+    -ms-grid-column: 13;
+    -ms-grid-column-span: 5;
+    grid-area: 8 / 13 /span 5 / span 5;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  #conversion {
+    font-size: 1.3rem;
+  }
+  #chart #selectedCurrency {
+    font-size: 1.5rem;
+  }
+  #chart #entries {
+    -ms-grid-columns: (33.333%)[3];
+        grid-template-columns: repeat(3, 33.333%);
+    grid-auto-rows: 15%;
+  }
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
   html {
     font-size: 90%;
+  }
+  #convert #currency1 {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 4;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 7;
+    grid-area: 1 / 3 / span 4 / span 7;
+  }
+  #convert #swap {
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 4;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-area: 4 / 2 / span 4 / span 1;
+  }
+  #convert #currency2 {
+    -ms-grid-row: 6;
+    -ms-grid-row-span: 4;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 7;
+    grid-area: 6 / 3 / span 4 / span 7;
+  }
+  #conversion {
+    font-size: 1.3rem;
+  }
+  #chart #selectedCurrency {
+    font-size: 1.5rem;
+  }
+  #chart #entries {
+    -ms-grid-columns: (25%)[4];
+        grid-template-columns: repeat(4, 25%);
+    grid-auto-rows: 15%;
   }
 }
 

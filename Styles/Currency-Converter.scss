@@ -8,16 +8,16 @@
 html{
     font-size: 100%;
 }
+#Wrapper{
+    @include widthAndHeight(100%,100vh);
+    background-color: rgb(109, 58, 109);
+    padding: 1% 1% 2% 1%;
+}
 #container{
     @include widthAndHeight(80%,100%);
     box-shadow: 0 0 20px black ;
     margin: auto;
     border-radius: 10px;
-}
-#Wrapper{
-    @include widthAndHeight(100%,100vh);
-    background-color: rgb(109, 58, 109);
-    padding: 1% 1% 2% 1%;
 }
 #header{
     @include widthAndHeight(100%,20%);
@@ -42,7 +42,7 @@ html{
         font-size: 1.3rem;
     }
     #swap{
-        grid-area: 3 / 3 / span 5 / span 1 ;
+        grid-area: 4 / 3 / span 4 / span 1 ;
         @include flex(center,center);
         @include widthAndHeight(80%,100%);
         background-color: white;
