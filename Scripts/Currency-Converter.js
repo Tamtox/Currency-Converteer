@@ -22,6 +22,8 @@ convert.addEventListener('submit',function(e) {
         console.log(res.data)
         functions.setConversion(res,currencyAmount.value,currency2.value);
         functions.setChart(res,currency1.value);
+        currency1.value = "";
+        currency2.value = "";
         currencyAmount.value = ""
     })
 })
@@ -62,7 +64,17 @@ const functions = {
         for(let i of currencyCodes) {
             let chartItem = document.createElement('div');
             chartItem.classList.add('chartItem');
-            entries.appendChild(chartItem)
+            chartItem.innerText = `${res.data.conversion_rates[i]} ${i}`;
+            chartItem.addEventListener('click',function() {
+                let curr = this.innerText.split(" ")[1];
+                functions.getInfo(curr)
+                .then(res=>{
+                    functions.clear();
+                    functions.setConversion(res,"","");
+                    functions.setChart(res,curr);
+                })
+            })
+            entries.appendChild(chartItem);
         }
     },
     // Clear all inputs

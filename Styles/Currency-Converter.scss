@@ -78,6 +78,7 @@ html{
 #chart{
     height: 85%;
     border-radius: 0 0 10px 10px; 
+    padding-bottom: 1%;
     #selectedCurrency{
         @include widthAndHeight(85%,15%);
         @include flex(center,center);
@@ -99,11 +100,14 @@ html{
     @include widthAndHeight(90%,90%);
     @include flex(center,center);
     margin: auto;
-    border: solid 1px black;
+    transition: 0.5s;
+}
+.chartItem:hover{
+    transform: scale(1.05);
+    color: grey;
 }
 .button{
-    @include widthAndHeight(50%,50%);
-    border: solid black 1px;
+    @include widthAndHeight(100%,100%);
     border-radius: 10px;
     transition: box-shadow 0.5s;
 }
