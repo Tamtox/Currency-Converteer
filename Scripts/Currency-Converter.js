@@ -42,7 +42,7 @@ const functions = {
     },
     // Exchange rate api call
     async getInfo(curr) {
-        return  await axios.get(`https://v6.exchangerate-api.com/v6/fa2fd75ad8cb2e47792d8a78/latest/${curr}`)
+        return  await axios.get(`https://v6.exchangerate-api.com/v6/e2d8ba7107da5a7846c16cb3/latest/${curr}`)
     },
     // Set Conversion calculation
     setConversion(res,currencyAm,secondCurr) {
