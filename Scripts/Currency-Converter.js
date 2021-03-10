@@ -83,9 +83,6 @@ const functions = {
         entries.innerHTML = "";
     }
 }
-// Generate Codes
-functions.generateCodes(currency1)
-functions.generateCodes(currency2)
 
 // Country Codes 
 const codes = {
@@ -250,3 +247,7 @@ const codes = {
     "ZAR": "South Africa Rand",
     "ZMW": "Zambian Kwacha"
 }
+
+// Generate Codes
+functions.generateCodes(currency1)
+functions.generateCodes(currency2)
